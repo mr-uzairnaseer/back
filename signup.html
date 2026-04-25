@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Signup | Secure Access</title>
+  </head>
+  <body>
+    <div id="success-msg" class="success-message">Registration Successful! Welcome back.</div>
+    <div class="container">
+      <div class="content">
+        <h1>Join Us</h1>
+        <p>Create your secure account.</p>
+        <form onsubmit="event.preventDefault(); showSuccess();">
+          <div class="input__group">
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your full name" required />
+          </div>
+          <div class="input__group">
+            <label>E-mail</label>
+            <input type="email" placeholder="Enter your e-mail" required />
+          </div>
+          <div class="input__group">
+            <label>Password</label>
+            <input type="password" placeholder="Create a password" required />
+          </div>
+          <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="index.html">Log in here</a></p>
+      </div>
+    </div>
+    <script>
+      function showSuccess() {
+        const msg = document.getElementById('success-msg');
+        msg.classList.add('show');
+        setTimeout(() => {
+          msg.classList.remove('show');
+          window.location.href = 'index.html';
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Reset Password | Back</title>
+  </head>
+  <body>
+    <div id="success-msg" class="success-message">Password updated successfully!</div>
+    <div class="container">
+      <div class="content">
+        <h1>New Password</h1>
+        <p>Set a strong new password for your account.</p>
+        <form onsubmit="event.preventDefault(); showSuccess();">
+          <div class="input__group">
+            <label>New Password</label>
+            <input type="password" placeholder="Enter new password" required />
+          </div>
+          <div class="input__group">
+            <label>Confirm Password</label>
+            <input type="password" placeholder="Confirm new password" required />
+          </div>
+          <button type="submit">Update Password</button>
+        </form>
+      </div>
+    </div>
+    <script>
+      function showSuccess() {
+        const msg = document.getElementById('success-msg');
+        msg.classList.add('show');
+        setTimeout(() => {
+          msg.classList.remove('show');
+          window.location.href = 'index.html';
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>
